@@ -1,0 +1,11 @@
+FROM python:3.11.3-slim
+
+RUN apt-get update && apt-get install build-essential \
+    gfortran libopenblas-dev pkg-config -y
+RUN pip install --upgrade pip setuptools wheel
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+RUN pip install -e .
+ENV CONFIG_PATH 'configs/monza.yaml'
+CMD ["python", "main.py", ${CONFIG_PATH}]

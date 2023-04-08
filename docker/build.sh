@@ -1,0 +1,1 @@
+docker build -f docker/dockerfile -t ac-data-generator .

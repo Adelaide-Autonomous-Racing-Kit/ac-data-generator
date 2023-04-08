@@ -1,0 +1,21 @@
+track_mesh_path: /mnt/data/aarc/tracks/monza/modified_monza.obj
+recorded_data_path: /mnt/data/aarc/recordings/monza/audi_r8_lms_2016/fastlaps/
+output_path: /mnt/data/aarc/generated/monza/audi_r8_lms_2016/fastlaps/
+track_name: monza
+car_name: audi_r8_lms_2016
+start_at_sample: 450
+finish_at_sample: -1
+sample_every: 1
+vertical_fov: 60
+image_size: [1600, 900]
+n_ray_casting_workers: 6
+n_generation_workers: 4
+generate:
+  segmentation:
+    - data
+    - visuals
+    - overlays
+  depth:
+    - visuals
+  normals:
+    - visuals

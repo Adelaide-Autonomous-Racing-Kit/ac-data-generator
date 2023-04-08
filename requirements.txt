@@ -1,0 +1,17 @@
+--prefer-binary
+python-fcl==0.7.0.4
+opencv-python
+numpy
+pyyaml
+pillow
+black
+flake8-black
+flake8
+isort
+loguru
+pyyaml
+tqdm
+halo
+pyembree
+prettytable
+trimesh[all]
