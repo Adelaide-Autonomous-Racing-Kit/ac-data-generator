@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Dict, List
 
 import numpy as np
-from src.generator.utils import save_image
+from src.workers.generator.utils import save_image
 
 
 class DataGenerator:

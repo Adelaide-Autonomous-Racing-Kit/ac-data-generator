@@ -1,4 +1,4 @@
-from src.tools.data_generation.cars.data import CarData
+from src.cars.data import CarData
 
 ALFA_ROMEO_GTR_DATA = CarData(
     camera_offset_x=0.00000,

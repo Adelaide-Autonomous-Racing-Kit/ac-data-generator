@@ -1,4 +1,4 @@
-from src.tools.data_generation.tracks.data import TrackData
+from src.tracks.data import TrackData
 
 GEOMETRIES_TO_REMOVE = [
     "shadow_serraglio",

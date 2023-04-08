@@ -1,4 +1,4 @@
-from src.tools.data_generation.cars.data import CarData
+from src.cars.data import CarData
 
 INVISIBLE_CAR = CarData(
     camera_offset_x=0.00000,

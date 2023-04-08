@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Dict, List
 
-from src.tools.data_generation.tracks.constants import SEMANTIC_NAME_TO_ID
+from src.tracks.constants import SEMANTIC_NAME_TO_ID
 
 
 @dataclass
