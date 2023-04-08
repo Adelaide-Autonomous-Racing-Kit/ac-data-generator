@@ -3,9 +3,8 @@ from typing import Dict, Union
 
 import cv2
 import numpy as np
-import yaml
-
 from src.utils.decode import STATE_DTYPES
+import yaml
 
 STRING_KEYS = [
     "tyre_compound",
@@ -41,13 +40,9 @@ def state_bytes_to_dict(data: bytes) -> Dict:
         see src.game_capture.state.shared_memory for a list of keys
     """
     state_array = np.frombuffer(data, STATE_DTYPES)
-    state_dict = {
-        key[0]: value for key, value in zip(STATE_DTYPES, state_array[0])
-    }
+    state_dict = {key[0]: value for key, value in zip(STATE_DTYPES, state_array[0])}
     for string_key in STRING_KEYS:
-        state_dict[string_key] = (
-            state_dict[string_key].tobytes().decode("utf-8")
-        )
+        state_dict[string_key] = state_dict[string_key].tobytes().decode("utf-8")
     return state_dict
 
 

@@ -2,10 +2,7 @@ import multiprocessing as mp
 import shutil
 from typing import Dict
 
-from src.workers.base import (
-    BaseWorker,
-    WorkerSharedState,
-)
+from src.workers.base import BaseWorker, WorkerSharedState
 from src.workers.generator import depth, normals, segmentation
 
 DATA_GENERATORS = {

@@ -1,12 +1,15 @@
 import ctypes
 import multiprocessing as mp
-import time
 from pathlib import Path
+import time
 from typing import List
 
 from halo import Halo
 from loguru import logger
 from prettytable import PrettyTable
+from src.utils.load import load_yaml
+from src.utils.records import get_sample_list
+from src.utils.save import maybe_create_folders
 from src.workers import (
     BaseWorker,
     DataGenerationWorker,
@@ -14,9 +17,6 @@ from src.workers import (
     SharedState,
     WorkerSharedState,
 )
-from src.utils.load import load_yaml
-from src.utils.records import get_sample_list
-from src.utils.save import maybe_create_folders
 from tqdm import tqdm
 
 
