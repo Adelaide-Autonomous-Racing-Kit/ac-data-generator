@@ -19,8 +19,10 @@ SEMANTIC_CLASSES = [
     ClassInformation("grass", 4, (170, 255, 128)),
     ClassInformation("vehicle", 5, (255, 42, 0)),
     ClassInformation("structure", 6, (153, 153, 255)),
-    ClassInformation("vegetation", 7, (0, 102, 17)),
+    ClassInformation("vegetation", 7, (0, 255, 238)),
     ClassInformation("people", 8, (255, 179, 204)),
+    ClassInformation("carpet", 9, (0, 102, 17)),
+    ClassInformation("water", 10, (0, 0, 255)),
     ClassInformation("void", -1, (0, 0, 0)),
 ]
 
