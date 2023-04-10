@@ -1,11 +1,20 @@
-from src.tools.data_generation.tracks.data import TrackData
+from src.tracks.data import TrackData
 
 GEOMETRIES_TO_REMOVE = [
     "scratch",
+    "bushes.001",
+    "Bark",
+    "pine",
+    "trees_new",
+    "tree_shadow",
+    "leaves",
+    "bbgrass",
+    "horizont",
+    "polys",
+    "physics",
 ]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
-    "bushes.001": "vegetation",
     "top_refl": "grass",
     "wall-gstand": "structure",
     "box-window": "structure",
@@ -23,7 +32,6 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "walls.001": "structure",
     "tv_staff": "structure",
     "Gazebo_Tent": "structure",
-    "Bark": "vegetation",
     "Vehicles.001": "vehicle",
     "tractor": "vehicle",
     "MB_Sprinter_2014": "vehicle",
@@ -68,9 +76,26 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "top": "grass",
     "ashpalt_new": "road",
     "tarmac-box": "road",
+    "tarmac3": "road",
+    "grass": "grass",
+    "grass-sand": "sand",
+    "flag8": "structure",
+    "flag7": "structure",
+    "structures_alpha": "structure",
+    "people": "people",
+    "box_alpha": "structure",
+    "gstand1": "structure",
+    "gstand1-alpha": "structure",
+    "brd2": "sand",
+    "driver_suit": "people",
+    "driver_face": "people",
 }
 
-VERTEX_GROUPS_TO_MODIFY = []
+VERTEX_GROUPS_TO_MODIFY = [
+    "AC_PIT",
+    "AC_HOTLAP_START",
+    "AC_START",
+]
 
 
 VALLELUNGA_DATA = TrackData(
