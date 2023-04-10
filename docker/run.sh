@@ -1,6 +1,6 @@
 docker run --rm \
     --shm-size 80G \
-    -v /home/james/Documents/:/mnt \
-    -e CONFIG_PATH='monza.yaml' \
-    -u $(id -u):$(id -g) \
+    -v /mnt/data:/data \
+    -v /home/james/Documents/generated:/out/ \
+    -e CONFIG_PATH='spa.yaml' \
     ac-data-generator

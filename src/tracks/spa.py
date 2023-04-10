@@ -1,4 +1,4 @@
-from src.tools.data_generation.tracks.data import TrackData
+from src.tracks.data import TrackData
 
 GEOMETRIES_TO_REMOVE = [
     "groove1",
@@ -51,7 +51,7 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "grails": "structure",
     "misc": "structure",
     "objects1": "vehicle",
-    "marshall": " people",
+    "marshall": "people",
     "hedge": "vegetation",
     "house7_Slot_#1": "structure",
     "fences": "structure",

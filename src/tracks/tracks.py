@@ -1,4 +1,4 @@
-from src.tools.data_generation.tracks.spa import SPA_DATA
+from src.tracks.spa import SPA_DATA
 from src.tracks.monza import MONZA_DATA
 
 """
