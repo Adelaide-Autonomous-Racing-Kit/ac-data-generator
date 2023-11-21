@@ -1,7 +1,7 @@
-track_mesh_path: /tracks/monza/modified_monza.obj
-recorded_data_path: /data/audi_r8_lms_2016/imitation-learning-fastlaps/val
-output_path: /out/monza/audi_r8_lms_2016/drivable
-track_name: monza
+track_mesh_path: /data/aarc/tracks/spa/modified_spa.obj
+recorded_data_path: /data/aarc/recordings/spa/audi_r8_lms_2016/fastbois/
+output_path: /out/spa/audi_r8_lms_2016/test/
+track_name: spa
 car_name: audi_r8_lms_2016
 start_at_sample: 450
 finish_at_sample: -1
@@ -15,7 +15,7 @@ generate:
     - data
     - visuals
     # - overlays
-  depth:
-    - visuals
-  normals:
-    - visuals
+  #depth:
+  #  - visuals
+  #normals:
+  #  - visuals

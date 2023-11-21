@@ -12,17 +12,18 @@ class ClassInformation:
 
 
 SEMANTIC_CLASSES = [
-    ClassInformation("road", 0, (84, 84, 84)),
-    ClassInformation("curb", 1, (255, 119, 51)),
-    ClassInformation("track_limit", 2, (255, 255, 255)),
-    ClassInformation("sand", 3, (255, 255, 0)),
-    ClassInformation("grass", 4, (170, 255, 128)),
-    ClassInformation("vehicle", 5, (255, 42, 0)),
-    ClassInformation("structure", 6, (153, 153, 255)),
-    ClassInformation("vegetation", 7, (0, 255, 238)),
+    ClassInformation("drivable", 0, (0, 255, 249)),
+    ClassInformation("road", 1, (84, 84, 84)),
+    ClassInformation("curb", 2, (255, 119, 51)),
+    ClassInformation("track_limit", 3, (255, 255, 255)),
+    ClassInformation("sand", 4, (255, 255, 0)),
+    ClassInformation("grass", 5, (170, 255, 128)),
+    ClassInformation("vehicle", 6, (255, 42, 0)),
+    ClassInformation("structure", 7, (153, 153, 255)),
     ClassInformation("people", 8, (255, 179, 204)),
-    ClassInformation("carpet", 9, (0, 102, 17)),
-    ClassInformation("water", 10, (0, 0, 255)),
+    ClassInformation("vegetation", 9, (0, 255, 238)),
+    ClassInformation("carpet", 10, (0, 102, 17)),
+    ClassInformation("water", 11, (0, 0, 255)),
     ClassInformation("void", -1, (0, 0, 0)),
 ]
 
