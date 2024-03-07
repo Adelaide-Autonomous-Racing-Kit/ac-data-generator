@@ -1,5 +1,5 @@
-track_mesh_path: /data/aarc/tracks/spa/modified_spa.obj
-recorded_data_path: /data/aarc/recordings/spa/audi_r8_lms_2016/fastbois/
+track_mesh_path: /tracks/spa/modified_spa.obj
+recorded_data_path: /data/spa/audi_r8_lms_2016/fastbois/
 output_path: /out/spa/audi_r8_lms_2016/test/
 track_name: spa
 car_name: audi_r8_lms_2016

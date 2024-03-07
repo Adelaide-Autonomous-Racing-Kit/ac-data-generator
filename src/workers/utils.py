@@ -50,7 +50,7 @@ def preprocess_track_mesh(
     source_file = track_mesh.open("r")
     destination_file = modified_mesh.open("w")
     while line := source_file.readline():
-        if "g " in line:
+        if "g " in line and not "g off" in line:
             is_modifying = False
         if is_vertex_group_to_modify(line, track_name):
             is_modifying = True
