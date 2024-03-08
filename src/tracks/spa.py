@@ -1,7 +1,6 @@
 from src.tracks.data import TrackData
 
 GEOMETRIES_TO_REMOVE = [
-    "groove1",
     "groove2",
     "groove3",
     "trees2B",
@@ -17,6 +16,7 @@ GEOMETRIES_TO_REMOVE = [
 ]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
+    "groove1": "drivable",
     "houses3": "structure",
     "Glass": "structure",
     "walls": "structure",
@@ -107,7 +107,9 @@ MATERIAL_TO_SEMANTIC_CLASS = {
 
 VERTEX_GROUPS_TO_MODIFY = [
     "AC_PIT",
+    "AC_POBJECT",
     "AC_START",
+    "AC_TIME",
     "AC_HOTLAP_START",
 ]
 

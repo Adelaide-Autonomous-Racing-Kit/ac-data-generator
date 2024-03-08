@@ -1,4 +1,5 @@
 FROM python:3.11.3-slim
+SHELL ["/bin/bash", "-c"] 
 # Update and install system packages
 RUN apt-get update && apt-get install build-essential wget \
     gfortran libopenblas-dev pkg-config ffmpeg libsm6 libxext6 -y
@@ -7,13 +8,12 @@ RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.
     -O /tmp/embree.tar.gz -nv && \
     tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local && \
     rm -rf /tmp/embree.tar.gz
+ENV LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:/usr/local/lib"
 # Update pip    
 RUN pip install --upgrade pip setuptools wheel
 # Install pyembree
-RUN pip install numpy cython
+RUN pip install numpy cython==0.29.36
 RUN pip install https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
-# Add intel embree to the path
-ENV LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:/usr/local/lib"
 # Install python packages
 COPY requirements.txt .
 RUN pip install -r requirements.txt

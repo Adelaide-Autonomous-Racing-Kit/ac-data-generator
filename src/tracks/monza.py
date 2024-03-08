@@ -3,7 +3,6 @@ from src.tracks.data import TrackData
 GEOMETRIES_TO_REMOVE = [
     "shadow_serraglio",
     "groove2",
-    "groove",
     "groove2b",
     "tree_shadow",
     "horizont",
@@ -21,6 +20,7 @@ GEOMETRIES_TO_REMOVE = [
 ]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
+    "groove": "drivable",
     "Pannello_Skin_00": "structure",
     "driver_face": "people",
     "driver_suit": "people",
