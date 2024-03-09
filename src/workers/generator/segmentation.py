@@ -1,11 +1,12 @@
 import cv2
 import numpy as np
+import trimesh
+
 from src.tracks import TRACK_DATA
 from src.tracks.constants import COLOUR_LIST, TRAIN_ID_LIST
 from src.utils.load import load_image
 from src.workers.generator.base import DataGenerator
 from src.workers.generator.utils import allocate_empty_frame, rgb_to_bgr
-import trimesh
 
 
 class SegmentationGenerator(DataGenerator):
