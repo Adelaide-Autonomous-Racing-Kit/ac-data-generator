@@ -42,7 +42,9 @@ def state_bytes_to_dict(data: bytes) -> Dict:
     state_array = np.frombuffer(data, STATE_DTYPES)
     state_dict = {key[0]: value for key, value in zip(STATE_DTYPES, state_array[0])}
     for string_key in STRING_KEYS:
-        state_dict[string_key] = state_dict[string_key].tobytes().decode("utf-8")
+        state_dict[string_key] = (
+            state_dict[string_key].tobytes().decode("utf-16").rstrip("\x00")
+        )
     return state_dict
 
 

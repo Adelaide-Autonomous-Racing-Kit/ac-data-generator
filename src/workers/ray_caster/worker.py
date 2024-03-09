@@ -2,6 +2,7 @@ import multiprocessing as mp
 from typing import Dict
 
 import numpy as np
+
 from src.utils.load import load_game_state
 from src.workers.base import BaseWorker
 from src.workers.ray_caster.utils import (

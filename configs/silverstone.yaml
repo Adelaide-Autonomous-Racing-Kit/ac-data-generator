@@ -1,15 +1,15 @@
-track_mesh_path: /tracks/spa/modified_silverstone.obj
-recorded_data_path: /data/silverstone/audi_r8_lms_2016/
+track_mesh_path: /tracks/ks_silverstone/modified_silverstone.obj
+recorded_data_path: /data/silverstone/audi_r8_lms_2016/sillybois
 output_path: /out/silverstone/audi_r8_lms_2016/test/
 track_name: silverstone
 car_name: audi_r8_lms_2016
-start_at_sample: 500
+start_at_sample: 0
 finish_at_sample: -1
-sample_every: 1
+sample_every: 10
 vertical_fov: 60
 image_size: [1600, 900]
-n_ray_casting_workers: 6
-n_generation_workers: 4
+n_ray_casting_workers: 2
+n_generation_workers: 1
 generate:
   segmentation:
     - data

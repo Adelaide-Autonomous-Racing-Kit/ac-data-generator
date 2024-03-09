@@ -1,6 +1,6 @@
 from src.tracks.data import TrackData
 
-GEOMETRIES_TO_REMOVE = []
+GEOMETRIES_TO_REMOVE = ["physics"]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
     "matt_big_source": "drivable",
@@ -15,7 +15,7 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "gstands1": "structure",
     "box2": "structure",
     "tile1": "structure",
-    "object1": "vehicle",
+    "objects1": "vehicle",
     "metals1": "structure",
     "tile1B": "structure",
     "fences1": "structure",
@@ -27,17 +27,17 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "flag4": "structure",
     "flag5": "structure",
     "grass": "grass",
-    "ashphalt": "road",
+    "asphalt": "road",
     "sand_new": "sand",
     "Curb_new": "curb",
     "curb": "curb",
     "sand-bordini": "grass",
     "bbgrass": "grass",
-    "stone": "structures",
+    "stone": "structure",
     "box2": "structure",
     "glass_transp": "structure",
     "ADV_add": "structure",
-    "marshall": "person",
+    "marshall": "people",
     "grass_paint": "grass",
     "top2": "grass",
     "asph_pitlane": "road",
@@ -49,11 +49,11 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "grass_NM": "structure",
     "top2_NM": "grass",
     "top2_refl": "grass",
-    "peopleB": "person",
+    "peopleB": "people",
     "grass_brd": "grass",
-    "Bark": "tree",
-    "Leaves": "tree",
-    "tree_shadow": "tree",
+    "Bark": "vegetation",
+    "Leaves": "vegetation",
+    "tree_shadow": "vegetation",
     "tyreswall": "structure",
 }
 
