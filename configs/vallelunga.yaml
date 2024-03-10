@@ -1,15 +1,15 @@
-track_mesh_path: /tracks/ks_vallelunga/modified_vallelunga.obj
-recorded_data_path: /data/vallelunga/audi_r8_lms_2016/sillybois
-output_path: /out/vallelunga/audi_r8_lms_2016/test/
-track_name: vallelunga
+track_mesh_path: /tracks/spa/modified_spa.obj
+recorded_data_path: /data/spa/audi_r8_lms_2016/fastbois
+output_path: /out/spa/audi_r8_lms_2016/fastbois
+track_name: spa
 car_name: audi_r8_lms_2016
 start_at_sample: 0
 finish_at_sample: -1
-sample_every: 10
+sample_every: 3
 vertical_fov: 60
 image_size: [1600, 900]
-n_ray_casting_workers: 2
-n_generation_workers: 1
+n_ray_casting_workers: 6
+n_generation_workers: 4
 generate:
   segmentation:
     - data

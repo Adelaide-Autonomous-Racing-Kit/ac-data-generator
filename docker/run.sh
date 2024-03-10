@@ -3,5 +3,5 @@ docker run --rm \
     -v /mnt/data/aarc/recordings/:/data/ \
     -v /mnt/data/aarc/tracks:/tracks/ \
     -v /home/james/Documents/generated:/out/ \
-    -e CONFIG_PATH='vallelunga.yaml' \
+    -e CONFIG_PATH='monza.yaml' \
     ac-data-generator
