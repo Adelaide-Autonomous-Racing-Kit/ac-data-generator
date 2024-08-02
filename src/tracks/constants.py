@@ -44,4 +44,4 @@ TRAIN_ID_LIST = [
     if info.train_id > -1
 ]
 TRAIN_ID_LIST.append(SEMANTIC_CLASSES[-1].train_id)
-TRAIN_ID_LIST = np.asarray(TRAIN_ID_LIST, dtype=np.uint8)
+TRAIN_ID_LIST = np.asarray(TRAIN_ID_LIST, dtype=np.int8)

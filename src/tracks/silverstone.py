@@ -1,10 +1,18 @@
 from src.tracks.data import TrackData
 
-GEOMETRIES_TO_REMOVE = ["physics"]
+GEOMETRIES_TO_REMOVE = [
+    "physics",
+    "trees",
+    "Leaves",
+    "Bark",
+    "tree_shadow",
+    "horizont",
+    "bbgrass",
+]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
     "matt_big_source": "drivable",
-    "trees": "vegetation",
+    # "trees": "vegetation",
     "MB_Sprinter_2014": "vehicle",
     "structures": "structure",
     "misc": "structure",
@@ -32,7 +40,6 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "Curb_new": "curb",
     "curb": "curb",
     "sand-bordini": "grass",
-    "bbgrass": "grass",
     "stone": "structure",
     "box2": "structure",
     "glass_transp": "structure",
@@ -51,9 +58,9 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "top2_refl": "grass",
     "peopleB": "people",
     "grass_brd": "grass",
-    "Bark": "vegetation",
-    "Leaves": "vegetation",
-    "tree_shadow": "vegetation",
+    # "Bark": "vegetation",
+    # "Leaves": "vegetation",
+    # "tree_shadow": "vegetation",
     "tyreswall": "structure",
 }
 

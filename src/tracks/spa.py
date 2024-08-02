@@ -12,7 +12,9 @@ GEOMETRIES_TO_REMOVE = [
     "trees2",
     "bbgrass",
     "physics",
+    "horizont",
     "top-ext",
+    "hedge",
 ]
 
 MATERIAL_TO_SEMANTIC_CLASS = {
@@ -52,7 +54,7 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "misc": "structure",
     "objects1": "vehicle",
     "marshall": "people",
-    "hedge": "vegetation",
+    # "hedge": "vegetation",
     "house7_Slot_#1": "structure",
     "fences": "structure",
     "stones_detail1": "structure",
