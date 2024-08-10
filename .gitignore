@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 envs/
+
+NVIDIA-OptiX-SDK-*-linux64-x86_64/
+generated/

@@ -1,0 +1,15 @@
+services:
+  ac-data-generator:
+    build:
+      context: ..
+      dockerfile: ./docker/dockerfile
+    image: ac-data-generator
+    container_name: ac-data-generator
+    shm_size: 80G
+    volumes:
+      - /media/james/JimmyB/work/aarc/:/data/
+      - /media/james/JimmyB/work/aarc/tracks:/tracks/
+      - ../generated:/out/
+      - ../configs:/configs/
+    environment:
+      - CONFIG_PATH=/configs/nordschleife.yaml

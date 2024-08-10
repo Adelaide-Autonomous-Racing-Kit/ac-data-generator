@@ -10,19 +10,12 @@ setup-conda:
 ifneq ($(wildcard $(CONDA_ENV_PATH)),)
 	@echo "Environment $(CONDA_ENV_PATH) already exists, do you want to delete it and create a new one? [y/n]"
 	@read ans; \
-	if [ $$ans = 'y' ]; then \
+	if [ $$ans == 'y' ]; then \
 		conda env remove -p $(CONDA_ENV_PATH); \
 	fi
 endif
 	# Create conda environment and install packages
-	conda create -y -p $(CONDA_ENV_PATH) -c conda-forge opencv numpy pyyaml pillow python=3.9 \
-		black flake8-black flake8 isort loguru pytest pytest-parallel py pytest-benchmark coverage \
-		pyautogui loguru yaml tqdm halo embree==2.17.7 pyembree pre_commit prettytable
-	
-	$(CONDA_ACTIVATE) $(CONDA_ENV_PATH)
-	# Install packages using pip
-	pip3 install trimesh\[all\]
-	pip3 install -e .
+	conda create -y -p $(CONDA_ENV_PATH) -c conda-forge python=3.9 pre_commit black flake8-black flake8 isort
 
 
 setup-pre-push:
@@ -34,10 +27,6 @@ setup-pre-push:
 run:
 	@echo $(CONDA_ENV_PATH)
 	@source activate $(CONDA_ENV_PATH)
-
-test:
-	@echo "Starting all non gpu related tests"
-	@pytest --workers 4 src/ -m "not benchmark and not gpu" 
 
 lint:
 	@black "src/" 

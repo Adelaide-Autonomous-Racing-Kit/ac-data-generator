@@ -2,7 +2,7 @@ import os
 import sys
 from pathlib import Path
 
-from src.generate_data import MultiprocessDataGenerator
+from acdg.generate_data import MultiprocessDataGenerator
 
 
 def main():

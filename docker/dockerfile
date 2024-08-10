@@ -15,11 +15,14 @@ RUN pip install --upgrade pip setuptools wheel
 RUN pip install numpy cython==0.29.36
 RUN pip install https://github.com/scopatz/pyembree/releases/download/0.1.6/pyembree-0.1.6.tar.gz
 # Install python packages
+WORKDIR /code
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 # Install ac-data-toolkit
-COPY . .
-RUN pip install -e .
+COPY setup.py .
+COPY src src
+RUN pip install .
+COPY main.py .
 # Run
-ENV CONFIG_PATH=monza.yaml
+ENV CONFIG_PATH=/configs/monza.yaml
 CMD python3 main.py ${CONFIG_PATH}
