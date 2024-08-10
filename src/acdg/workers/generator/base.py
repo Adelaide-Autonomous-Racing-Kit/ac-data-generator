@@ -2,8 +2,8 @@ import abc
 from pathlib import Path
 from typing import Dict, List
 
-import numpy as np
 from acdg.workers.generator.utils import save_image
+import numpy as np
 
 
 class DataGenerator:

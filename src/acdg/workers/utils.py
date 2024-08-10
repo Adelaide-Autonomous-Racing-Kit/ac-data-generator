@@ -1,8 +1,7 @@
 from pathlib import Path
 
-import trimesh
-
 from acdg.tracks import TRACK_DATA
+import trimesh
 
 
 def load_track_mesh(

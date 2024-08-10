@@ -4,9 +4,6 @@ from pathlib import Path
 import time
 from typing import List
 
-from halo import Halo
-from loguru import logger
-from prettytable import PrettyTable
 from acdg.utils.load import load_yaml
 from acdg.utils.records import get_sample_list
 from acdg.utils.save import maybe_create_folders
@@ -17,6 +14,9 @@ from acdg.workers import (
     SharedState,
     WorkerSharedState,
 )
+from halo import Halo
+from loguru import logger
+from prettytable import PrettyTable
 from tqdm import tqdm
 
 

@@ -1,4 +1,3 @@
-import numpy as np
 from acdg.workers.generator.base import DataGenerator
 from acdg.workers.generator.utils import (
     allocate_empty_frame,
@@ -6,6 +5,7 @@ from acdg.workers.generator.utils import (
     noramlise_values,
     reverse_sign_of_values,
 )
+import numpy as np
 import trimesh
 
 

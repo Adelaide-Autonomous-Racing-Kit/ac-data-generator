@@ -1,10 +1,10 @@
-import numpy as np
 from acdg.workers.generator.base import DataGenerator
 from acdg.workers.generator.utils import (
     allocate_empty_frame,
     convert_to_uint8,
     noramlise_values,
 )
+import numpy as np
 import trimesh
 
 

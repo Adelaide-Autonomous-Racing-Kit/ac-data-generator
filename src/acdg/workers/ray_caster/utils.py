@@ -1,8 +1,8 @@
 import math
 from typing import Dict, List
 
-from scipy.spatial.transform import Rotation
 from acdg.cars import CAR_DATA
+from scipy.spatial.transform import Rotation
 import trimesh
 
 # Set trimesh's rotation order to extrinsic xyz

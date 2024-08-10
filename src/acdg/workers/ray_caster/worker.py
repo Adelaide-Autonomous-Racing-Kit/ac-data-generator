@@ -1,8 +1,6 @@
 import multiprocessing as mp
 from typing import Dict
 
-import numpy as np
-
 from acdg.utils.load import load_game_state
 from acdg.workers.base import BaseWorker
 from acdg.workers.ray_caster.utils import (
@@ -11,6 +9,7 @@ from acdg.workers.ray_caster.utils import (
     get_camera_location,
     get_camera_rotation,
 )
+import numpy as np
 
 
 class RayCastingWorker(BaseWorker):

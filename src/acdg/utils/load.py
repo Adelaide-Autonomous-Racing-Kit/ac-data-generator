@@ -1,9 +1,9 @@
 from pathlib import Path
 from typing import Dict, Union
 
+from acdg.utils.decode import STATE_DTYPES
 import cv2
 import numpy as np
-from acdg.utils.decode import STATE_DTYPES
 import yaml
 
 STRING_KEYS = [
