@@ -1,7 +1,8 @@
 docker run --rm \
+    -it \
     --shm-size 80G \
-    -v /mnt/data/aarc/recordings/:/data/ \
-    -v /mnt/data/aarc/tracks:/tracks/ \
+    -v /media/james/JimmyB/work/aarc/:/data/ \
+    -v /media/james/JimmyB/work/aarc/tracks:/tracks/ \
     -v /home/james/Documents/generated:/out/ \
-    -e CONFIG_PATH='vallelunga.yaml' \
+    -e CONFIG_PATH='nordschleife.yaml' \
     ac-data-generator

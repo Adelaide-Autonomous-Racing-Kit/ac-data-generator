@@ -1,11 +1,11 @@
-track_mesh_path: /tracks/ks_vallelunga/modified_vallelunga.obj
-recorded_data_path: /data/vallelunga/audi_r8_lms_2016/sillybois
-output_path: /out/vallelunga/audi_r8_lms_2016/test/
+track_mesh_path: /tracks/ks_vallelunga/vallelunga_3.obj
+recorded_data_path: /data/recordings_v2/vallelunga/audi_r8_lms_2016/sillybois
+output_path: /out/vallelunga/audi_r8_lms_2016/sillybois/
 track_name: vallelunga
 car_name: audi_r8_lms_2016
 start_at_sample: 0
 finish_at_sample: -1
-sample_every: 10
+sample_every: 3
 vertical_fov: 60
 image_size: [1600, 900]
 n_ray_casting_workers: 2

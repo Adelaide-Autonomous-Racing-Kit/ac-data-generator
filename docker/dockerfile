@@ -8,7 +8,7 @@ RUN wget https://github.com/embree/embree/releases/download/v2.17.7/embree-2.17.
     -O /tmp/embree.tar.gz -nv && \
     tar -xzf /tmp/embree.tar.gz --strip-components=1 -C /usr/local && \
     rm -rf /tmp/embree.tar.gz
-ENV LD_LIBRARY_PATH "${LD_LIBRARY_PATH}:/usr/local/lib"
+ENV LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
 # Update pip    
 RUN pip install --upgrade pip setuptools wheel
 # Install pyembree
@@ -21,5 +21,5 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN pip install -e .
 # Run
-ENV CONFIG_PATH "monza.yaml"
+ENV CONFIG_PATH=monza.yaml
 CMD python3 main.py ${CONFIG_PATH}
