@@ -12,4 +12,4 @@ services:
       - ../generated:/out/
       - ../configs:/configs/
     environment:
-      - CONFIG_PATH=/configs/nordschleife.yaml
+      - CONFIG_PATH=/configs/yas_marina.yaml

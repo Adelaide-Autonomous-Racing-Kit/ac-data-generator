@@ -3,6 +3,7 @@ from acdg.tracks.data import TrackData
 GEOMETRIES_TO_REMOVE = [
     "3Dgrass",
     "trees",
+    "physics",
 ]
 
 
@@ -176,13 +177,14 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "pirel": "road",
     "pirelli_boardsmall": "structure",
     "Pirellisignwide": "structure",
+    "Pitentrysign": "structure",
     "Pit_Exit_Light_Euroracers": "structure",
     "pit_garage_decal_tod_a": "road",
     "pit_pavement": "structure",
     "pitentrydisplayer": "structure",
     "pitlane_props_base": "structure",
     "pitstrip_blue": "road",
-    "pitstrip_whitelines": "track_limits",
+    "pitstrip_whitelines": "track_limit",
     "portacabin_sml_a_tod": "structure",
     "pzerbord": "structure",
     "recovery_crane_a_tod": "structure",
@@ -211,6 +213,8 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "Section_Euroracersmall": "structure",
     "Section_F1Hybrid": "structure",
     "Section_Liquimolly": "structure",
+    "Section_Liquimoly": "structure",
+    "Section_Liquimoly.001": "structure",
     "Section_Paddockclub": "structure",
     "Section_Pirelli": "structure",
     "Section_Pirellismall": "structure",
@@ -221,11 +225,15 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "Section_Rolex_2": "structure",
     "Section_Rolexsmall": "structure",
     "sign100": "structure",
+    "sign100.001": "structure",
     "Sign100M": "structure",
     "sign150": "structure",
+    "sign150.001": "structure",
     "Sign150M": "structure",
     "sign200": "structure",
+    "sign200.001": "structure",
     "sign50": "structure",
+    "sign50.001": "structure",
     "Sign50M": "structure",
     "sign_noentry_a": "structure",
     "skidmark": "road",
@@ -242,7 +250,7 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "tribunglass_d": "structure",
     "trmc_cyan2": "road",
     "trmc_cyandark-cyanlight": "road",
-    "trmc_offwhite": "raod",
+    "trmc_offwhite": "road",
     "trmc_orange": "curb",
     "trmc_red": "curb",
     "trmc_white": "curb",
@@ -259,7 +267,12 @@ MATERIAL_TO_SEMANTIC_CLASS = {
     "yas_hotel_roof_Lights": "structure",
 }
 
-VERTEX_GROUPS_TO_MODIFY = []
+VERTEX_GROUPS_TO_MODIFY = [
+    "AC_START",
+    "AC_PIT",
+    "AC_TIME",
+    "AC_HOTLAP_START",
+]
 
 
 YAS_MARINA_DATA = TrackData(
