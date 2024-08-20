@@ -1,5 +1,5 @@
 track_mesh_path: /tracks/spa/modified_spa.obj
-recorded_data_path: /data/spa/audi_r8_lms_2016/sillybois/
+recorded_data_path: /data/recordings/spa/audi_r8_lms_2016/sillybois/
 output_path: /out/spa/audi_r8_lms_2016/sillybois/
 track_name: spa
 car_name: audi_r8_lms_2016

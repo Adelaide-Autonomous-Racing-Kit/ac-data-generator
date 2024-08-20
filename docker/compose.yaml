@@ -6,10 +6,12 @@ services:
     image: ac-data-generator
     container_name: ac-data-generator
     shm_size: 80G
+    user: ${USER_ID}:${GROUP_ID}
     volumes:
-      - /media/james/JimmyB/work/aarc/:/data/
-      - /media/james/JimmyB/work/aarc/tracks:/tracks/
+      - /media/james/JimmyB1/work/aarc/:/data/
+      # - /media/james/JimmyB/work/aarc/tracks:/tracks/
+      - /home/james/Desktop/:/tracks/
       - ../generated:/out/
       - ../configs:/configs/
     environment:
-      - CONFIG_PATH=/configs/yas_marina.yaml
+      - CONFIG_PATH=${CONFIG_PATH}
