@@ -8,8 +8,8 @@ finish_at_sample: -1
 sample_every: 3
 vertical_fov: 60
 image_size: [1600, 900]
-n_ray_casting_workers: 2
-n_generation_workers: 1
+n_ray_casting_workers: 6
+n_generation_workers: 4
 generate:
   segmentation:
     - data
