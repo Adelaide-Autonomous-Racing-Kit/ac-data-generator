@@ -29,3 +29,23 @@ After making any changes to mesh export it using the following settings:
 ![Blender Export Obj](imgs/blender-export-obj.png)
 Then open up the exported `.obj` in a text editor and use `Find and replace` to change all the occurrences of `o ` to `g `. 
 (*Note:* This is a bug in blender as vertex groups in obj should have a g prefix)
+
+## Commbing Duplicate Materials
+When importing several different `.obj` files into blender it will automatically generate two seperate materials if the same name is used in two different objects.
+In our case these do refere to the same materials and are genuine duplicates.
+To combine these you can go to the `scripting` tab of blender and run this snippet:
+```python
+import bpy
+
+mats = bpy.data.materials
+
+for mat in mats:
+    (original, _, ext) = mat.name.rpartition(".")
+    
+    if ext.isnumeric() and mats.find(original) != -1:
+        print("%s -> %s" %(mat.name, original))
+        
+        mat.user_remap(mats[original])
+        mats.remove(mat)
+```
+[Credit to Kei MURATAGAWA](https://blender.stackexchange.com/questions/75790/how-to-merge-around-300-duplicate-materials)
