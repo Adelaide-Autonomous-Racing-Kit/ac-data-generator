@@ -7,10 +7,10 @@ services:
     container_name: ac-data-generator
     shm_size: 80G
     user: ${USER_ID}:${GROUP_ID}
+    tty: true
     volumes:
-      - /media/james/JimmyB1/work/aarc/:/data/
-      # - /media/james/JimmyB/work/aarc/tracks:/tracks/
-      - /home/james/Desktop/:/tracks/
+      - /media/james/JimmyB/work/aarc/:/data/
+      - /media/james/JimmyB/work/aarc/tracks:/tracks/
       - ../generated:/out/
       - ../configs:/configs/
     environment:
