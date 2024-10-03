@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: Code Prettifier - Black
+        entry: ./envs/bin/python3.9 -m black "src/"
+        language_version: python3.9
+        language: python
+        pass_filenames: false
+
+      - id: flake8
+        name: Code Linter - Flake8
+        entry: ./envs/bin/python3.9 -m flake8 "src/"
+        args: ['--config=linters/flake8.ini']
+        language: python
+        pass_filenames: false
+  
+      - id: isort
+        name: Import Sorter - isort
+        entry: ./envs/bin/python3.9 -m isort "src/"
+        args: ['--settings-path=linters/isort.ini']
+        language: python
+        pass_filenames: false
