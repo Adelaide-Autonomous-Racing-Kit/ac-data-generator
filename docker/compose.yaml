@@ -2,7 +2,7 @@ services:
   ac-data-generator:
     build:
       context: ..
-      dockerfile: ./docker/dockerfile
+      dockerfile: ./docker/optix.dockerfile
     image: ac-data-generator
     container_name: ac-data-generator
     shm_size: 80G

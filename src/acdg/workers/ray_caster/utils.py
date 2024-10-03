@@ -4,6 +4,7 @@ from typing import Dict, List
 from acdg.cars import CAR_DATA
 from scipy.spatial.transform import Rotation
 import trimesh
+from triro.ray.ray_optix import RayMeshIntersector
 
 # Set trimesh's rotation order to extrinsic xyz
 trimesh.transformations.euler_matrix.__defaults__ = ("sxyz",)
@@ -34,7 +35,7 @@ def calculate_horizontal_fov(
 
 def convert_scene_to_collision_mesh(
     scene: trimesh.Scene,
-) -> trimesh.ray.ray_pyembree.RayMeshIntersector:
+) -> RayMeshIntersector:
     """
     Concatenates all the geometry nodes in a scene into a single trimesh.Mesh
         object and instantiates a RayMeshIntersector with it. The triangle
@@ -46,11 +47,11 @@ def convert_scene_to_collision_mesh(
     :param scene: The trimesh.Scene to convert.
     :type scene: trimesh.Scene
     :return: A RayMeshIntersector instance using the converted mesh.
-    :rtype: trimesh.ray.ray_pyembree.RayMeshIntersector
+    :rtype: RayMeshIntersector
     """
     meshes = [mesh for mesh in scene.geometry.values()]
     mesh = trimesh.util.concatenate(meshes)
-    return trimesh.ray.ray_pyembree.RayMeshIntersector(mesh)
+    return RayMeshIntersector(mesh)
 
 
 def get_camera_rotation(state: Dict, car_name: str) -> List[float]:
