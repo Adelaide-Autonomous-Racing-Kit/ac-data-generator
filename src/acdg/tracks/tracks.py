@@ -1,3 +1,4 @@
+from acdg.tracks.imola import IMOLA_DATA
 from acdg.tracks.monza import MONZA_DATA
 from acdg.tracks.nordschleife import NORDSCHLEIFE_DATA
 from acdg.tracks.silverstone import SILVERSTONE_DATA
@@ -18,4 +19,5 @@ TRACK_DATA = {
     "nordschleife": NORDSCHLEIFE_DATA,
     "yas_marina": YAS_MARINA_DATA,
     "mount_panorama": MT_PANORAMA_DATA,
+    "imola": IMOLA_DATA,
 }
