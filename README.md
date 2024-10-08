@@ -59,7 +59,7 @@ for mat in mats:
 
 ## Citation
 If you use ACDG in your research or quote our baselines please cite us in your work:
-```
+```BibTeX
 @misc{bockman2024aarkopentoolkitautonomous,
       title={AARK: An Open Toolkit for Autonomous Racing Research}, 
       author={James Bockman and Matthew Howe and Adrian Orenstein and Feras Dayoub},
