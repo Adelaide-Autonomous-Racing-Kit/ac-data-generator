@@ -56,3 +56,17 @@ for mat in mats:
         mats.remove(mat)
 ```
 [Credit to Kei MURATAGAWA](https://blender.stackexchange.com/questions/75790/how-to-merge-around-300-duplicate-materials)
+
+## Citation
+If you use ACDG in your research or quote our baselines please cite us in your work:
+```
+@misc{bockman2024aarkopentoolkitautonomous,
+      title={AARK: An Open Toolkit for Autonomous Racing Research}, 
+      author={James Bockman and Matthew Howe and Adrian Orenstein and Feras Dayoub},
+      year={2024},
+      eprint={2410.00358},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2410.00358}, 
+}
+```
