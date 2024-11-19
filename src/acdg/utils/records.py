@@ -3,15 +3,10 @@ from pathlib import Path
 from typing import List
 
 
-def get_sample_list(recording_path: Path) -> List[str]:
-    filenames = os.listdir(recording_path)
-    samples = filter_for_game_state_files(filenames)
-    return sort_records(samples)
+def get_sample_list(recording_path: Path) -> List[Path]:
+    filepaths = [x for x in recording_path.glob("**/*.bin")]
+    return sort_records(filepaths)
 
 
-def filter_for_game_state_files(filenames: List[str]) -> List[str]:
-    return [record[:-4] for record in filenames if record[-4:] == ".bin"]
-
-
-def sort_records(filenames: List[str]) -> List[str]:
-    return sorted(filenames, key=lambda x: int(x))
+def sort_records(filenames: List[Path]) -> List[Path]:
+    return sorted(filenames, key=lambda x: int(x.stem))

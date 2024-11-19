@@ -50,7 +50,9 @@ class SegmentationGenerator(DataGenerator):
         :param colour_map: A visualised semantic map
         :type colour_map: np.array
         """
-        self._save_data(f"{self._record_number}-seg_colour.png", colour_map)
+        output_path = self._base_output_path
+        output_path = output_path.with_stem(f"{output_path.stem}-seg_colour")
+        self._save_data(output_path, colour_map)
 
     def _generate_semantic_training_data(self, pixel_ids: np.array):
         """
@@ -69,7 +71,9 @@ class SegmentationGenerator(DataGenerator):
         :param ids_map: Semantic segmentation training data
         :type ids_map: np.array
         """
-        self._save_data(f"{self._record_number}-trainids.png", ids_map)
+        output_path = self._base_output_path
+        output_path = output_path.with_stem(f"{output_path.stem}-trainids")
+        self._save_data(output_path, ids_map)
 
     def _generate_overlaid_visualisation(self, pixel_ids: np.array):
         """
@@ -94,7 +98,9 @@ class SegmentationGenerator(DataGenerator):
         :param overlaid: Overlaid visualisation
         :type overlaid: np.array
         """
-        self._save_data(f"{self._record_number}-seg_overlay.png", overlaid)
+        output_path = self._base_output_path
+        output_path = output_path.with_stem(f"{output_path.stem}-seg_overlay")
+        self._save_data(output_path, overlaid)
 
     def _setup(self):
         """

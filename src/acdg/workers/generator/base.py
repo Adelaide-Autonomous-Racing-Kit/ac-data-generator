@@ -43,7 +43,7 @@ class DataGenerator:
         """
         raise NotImplementedError()
 
-    def _save_data(self, filename: str, to_save: np.array):
+    def _save_data(self, filepath: Path, to_save: np.array):
         """
         Saves the generated data to a file.
 
@@ -53,8 +53,7 @@ class DataGenerator:
         :type to_save: numpy.array
         """
         flip_ud = not self._is_generating_depth
-        output_path = self._output_path.joinpath(filename)
-        save_image(to_save, output_path, flip_ud)
+        save_image(to_save, filepath, flip_ud)
 
     def _insert_values_into_image(self, values: np.array, image: np.array):
         """
@@ -98,14 +97,27 @@ class DataGenerator:
         return Path(self._worker._config["recorded_data_path"])
 
     @property
-    def _record_number(self) -> str:
+    def _record(self) -> Path:
         """
-        The record number for the current generation job.
+        The path to the record for the current generation job.
 
-        :return: The record number for the current generation job.
-        :rtype: str
+        :return: The path to the record for the current generation job.
+        :rtype: Path
         """
-        return self._worker._work["record_number"]
+        return self._worker._work["record"]
+
+    @property
+    def _base_output_path(self) -> Path:
+        """
+        The output path for the record currently being used.
+
+        :return: The output path for the record currently being used.
+        :rtype: Path
+        """
+        source = self._record.with_suffix(".png")
+        source_directory = Path(str(source).replace(source.name, "")).name
+        output_stem = Path(source_directory).joinpath(source.name)
+        return self._output_path.joinpath(output_stem)
 
     @property
     def _captured_frame_path(self) -> Path:
@@ -115,7 +127,7 @@ class DataGenerator:
         :return: The path to the current record numbers frame is saved.
         :rtype: Path
         """
-        return self._recording_path.joinpath(self._record_number + ".jpeg")
+        return self._record.with_suffix(".jpeg")
 
     @property
     def _i_triangles(self) -> np.array:

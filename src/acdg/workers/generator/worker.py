@@ -1,5 +1,6 @@
 import multiprocessing as mp
 import shutil
+from pathlib import Path
 from typing import Dict
 
 from acdg.workers.base import BaseWorker, WorkerSharedState
@@ -54,10 +55,11 @@ class DataGenerationWorker(BaseWorker):
         """
         Copy the records captured game frame to the output directory.
         """
-        filename = self._record_number + ".jpeg"
-        source_path = self.recording_path.joinpath(filename)
-        destination_path = self.output_path.joinpath(filename)
-        shutil.copyfile(source_path, destination_path)
+        source = self._record.with_suffix(".jpeg")
+        source_directory = Path(str(source).replace(source.name, "")).name
+        output_stem = Path(source_directory).joinpath(source.name)
+        destination_path = self.output_path.joinpath(output_stem)
+        shutil.copyfile(source, destination_path)
 
     @property
     def _job_queue(self) -> mp.Queue:
@@ -70,14 +72,14 @@ class DataGenerationWorker(BaseWorker):
         return self.generation_queue
 
     @property
-    def _record_number(self) -> str:
+    def _record(self) -> Path:
         """
-        Get the current record's id number.
+        Get the current record's path.
 
-        :return: The current record's id number.
-        :rtype: str
+        :return: The current record's path.
+        :rtype: Path
         """
-        return self._work["record_number"]
+        return self._work["record"]
 
     def _setup(self):
         """

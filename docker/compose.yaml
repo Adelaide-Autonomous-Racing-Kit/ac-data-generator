@@ -9,8 +9,8 @@ services:
     user: ${USER_ID}:${GROUP_ID}
     tty: true
     volumes:
-      - /media/james/JimmyB/work/aarc/:/data/
-      - /media/james/JimmyB/work/aarc/tracks:/tracks/
+      - /media/james/JimmyB/Work/aarc/:/data/
+      - /media/james/JimmyB/Work/aarc/tracks:/tracks/
       - ../generated:/out/
       - ../configs:/configs/
     environment:

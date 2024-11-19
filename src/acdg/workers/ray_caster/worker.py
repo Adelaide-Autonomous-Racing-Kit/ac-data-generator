@@ -1,4 +1,5 @@
 import multiprocessing as mp
+from pathlib import Path
 from typing import Dict
 
 from acdg.utils.load import load_game_state
@@ -53,8 +54,7 @@ class RayCastingWorker(BaseWorker):
         """
         Adjust the camera's pose in the scene.
         """
-        state_path = self.recording_path.joinpath(self._record_number + ".bin")
-        state = load_game_state(state_path)
+        state = load_game_state(self._record)
         self._scene.set_camera(
             angles=get_camera_rotation(state, self.car_name),
             center=get_camera_location(state, self.car_name),
@@ -104,7 +104,7 @@ class RayCastingWorker(BaseWorker):
             from triangle intersections into a dictionary.
         """
         generation_job = {
-            "record_number": self._record_number,
+            "record": self._record,
             "i_triangles": self._i_triangles,
         }
         self._maybe_add_depth_generation_information(generation_job)
@@ -143,9 +143,9 @@ class RayCastingWorker(BaseWorker):
         generation_job.update(additional_information_for_depth_calculations)
 
     @property
-    def _record_number(self) -> str:
+    def _record(self) -> Path:
         """
-        ID number of the sample in a recording to be processed
+        Path to the state record being processed
         """
         return self._work
 

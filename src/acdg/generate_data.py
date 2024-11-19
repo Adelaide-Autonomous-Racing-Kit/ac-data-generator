@@ -178,6 +178,14 @@ class MultiprocessDataGenerator:
 
     def _setup_folders(self):
         maybe_create_folders(self.output_path)
+        output_paths = self._get_output_sub_directories()
+        for path in output_paths:
+            maybe_create_folders(path)
+
+    def _get_output_sub_directories(self) -> List[Path]:
+        input_path = self.recording_path
+        input_directories = [x.name for x in input_path.iterdir() if x.is_dir()]
+        return [self.output_path.joinpath(x) for x in input_directories]
 
     def _initialise_member_variables(self):
         self.is_ready = False

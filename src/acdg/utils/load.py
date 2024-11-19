@@ -24,13 +24,12 @@ def load_yaml(filepath: str) -> Dict:
     return yaml_dict
 
 
-def load_game_state(filepath: str) -> Dict:
+def load_game_state(filepath: Path) -> Dict:
     """
     Loads recorded game state np.arrays as a dictionary of observations
         see acdg.game_capture.state.shared_memory.ac for a list of keys
     """
-    with open(filepath, "rb") as file:
-        data = file.read()
+    data = filepath.read_bytes()
     return state_bytes_to_dict(data)
 
 

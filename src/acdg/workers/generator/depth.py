@@ -64,7 +64,9 @@ class DepthMapGenerator(DataGenerator):
         :param depth_map: A visualised depth map.
         :type depth_map: np.array
         """
-        self._save_data(f"{self._record_number}-depth.png", depth_map)
+        output_path = self._base_output_path
+        output_path = output_path.with_stem(f"{output_path.stem}-depth")
+        self._save_data(output_path, depth_map)
 
     def _setup(self):
         """

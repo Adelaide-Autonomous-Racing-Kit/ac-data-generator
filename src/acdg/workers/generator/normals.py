@@ -57,7 +57,9 @@ class NormalMapGenerator(DataGenerator):
         :param normal_map: A visualised normal map.
         :type normal_map: np.array
         """
-        self._save_data(f"{self._record_number}-normals.png", normal_map)
+        output_path = self._base_output_path
+        output_path = output_path.with_stem(f"{output_path.stem}-normals")
+        self._save_data(output_path, normal_map)
 
     def _setup(self):
         """
